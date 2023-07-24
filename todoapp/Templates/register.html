@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,13 @@
     <link rel="stylesheet" href="./style.css">
     <title>Title</title>
 </head>
-<body>
+<style>
+    body{
+       background-color: lightblue;
+    }
+</style>
+<body  style="background-image: url('{% static 'img/img07.jpg' %}');background-repeat: no-repeat;background-size:  1550PX 715PX;">
+
 <div class="header" align="center">
     <h2>Register Here</h2>
 </div>

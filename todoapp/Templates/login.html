@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +8,20 @@
 
 
 </head>
-<body>
-    <style>{
-    background-color: lightpink;
-    }
-    </style>
-<div align="center">
+<body  style="background-image: url('{% static 'img/img05.jpg' %}');background-repeat: no-repeat;background-size:  1550PX 715PX;">
+
+<div align="center" style="color: white;">
     <h1>Login Here</h1>
 </div>
-<div class="card-body" align="center">
+<div class="card-body" align="center" style="color: white;">
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <input class="button" type="submit" value="login">
+        <input class="btn btn-primary" type="submit" value="login">
 
     </form>
 </div>
-<p align="center">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+<p align="center" style="color: white;">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
 
 </body>
 </html>
