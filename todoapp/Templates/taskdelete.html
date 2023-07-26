@@ -16,10 +16,9 @@
     <form method="post" action="">
         {% csrf_token %}
         <p>Are you sure you want to delete this "{{task}}"?</p>
-        <button type="button" class="btn btn-danger">
-            <i class="bi-trash">Delete</i>
-        </button>
-        <a href="{% url 'task' %}">Go Back</a>
+         <input class="btn btn-danger" type="submit" value="delete"/>
+            <a href="{% url 'task' %}"> <input class="btn btn-danger" type="submit" value="cancel"/></a>
+
     </form>
 </div>
 </center>

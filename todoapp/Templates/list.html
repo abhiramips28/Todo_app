@@ -44,28 +44,41 @@
 
 <br>
 
-<table class="table table-bordered">
-    {% for tasks in task %}
+<table>
+     <div class="task-wrapper">
+                     <tr style="background-color:RED;">
+                           <td>ID NO</td>
+                           <td>TASKS</td>
+                           <td>DESCRIPTION</td>
+                           <td>COMPLETED</td>
+                           <td>TIME</td>
+                           <td>UPDATE</td>
+                           <td>DELETE</td>
+                           <td>VIEW</td>
+                     </tr>
 
-    <thead>
-        <tr>
-
-            <td scope="col">{{tasks.id}}</td>
-            <td scope="col">{{tasks.title}}</td>
-            <td scope="col">{{tasks.description}}</td>
-            <td scope="col">{{tasks.completed}}</td>
-            <td scope="col">{{tasks.created}}</td>
+       <div class="table table-bordered">
+                 {% for tasks in task %}
 
 
-            <th scope="col"><a href="{% url 'task-update' tasks.id %}">Task Update</a></th>
-            <th scope="col"><a href="{% url 'task-delete' tasks.id %}">Task Delete</a></th>
-            <th scope="col"><a href="{% url 'task-details' tasks.id %}">Task Details</a></th>
+             <tr>
 
-        </tr>
+               <td scope="col">{{tasks.id}}</td>
+               <td scope="col">{{tasks.title}}</td>
+               <td scope="col">{{tasks.description}}</td>
+               <td scope="col">{{tasks.completed}}</td>
+               <td scope="col">{{tasks.created}}</td>
 
-    </thead>
-      {% endfor %}
 
+               <th scope="col"><a href="{% url 'task-update' tasks.id %}">Task Update</a></th>
+               <th scope="col"><a href="{% url 'task-delete' tasks.id %}">Task Delete</a></th>
+                <th scope="col"><a href="{% url 'task-details' tasks.id %}">Task Details</a></th>
+
+             </tr>
+
+           {% endfor %}
+       </div>
+     </div>
 </table>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 </body>
